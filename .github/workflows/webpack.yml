@@ -19,7 +19,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Build
+
     - run: cd app && npm ci
     - run: zip -r publish.zip ./app/*
     - run: aws lambda update-function-code --function-name=app
